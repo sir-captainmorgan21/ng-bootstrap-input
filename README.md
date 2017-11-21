@@ -1,27 +1,104 @@
 # NgBootstrapInput
+Provides Bootstrap 4 driven input components for you angular application.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
+## Table of Contents
+* [Demo](#demo)
+* [Installation](#installation)
+* [Setup](#setup)
+* [Configuration](#configuration)
+* [Usage Examples](#usage-examples)
 
-## Development server
+## Demo
+You can clone down this repo to deploy a demo locally.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
+```
+npm install ng-bootstrap-input
+```
 
-## Code scaffolding
+## Setup
+Import ```BootstrapInputModule``` into your ```app.module```.
+```typescript
+import { BootstrapInputModule } from 'ng-bootstrap-input';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+  ...
+  imports: [
+    BootstrapInputModule
+  ],
+})
+```
 
-## Build
+Import ```BootstrapInputConfigInterface``` and ```BootstrapFormGroup``` into the component you want to include an input in
+You will also want to import ```FormBuilder```, ```FormGroup```, ```Validators```, ```FormControl```, and ```NgControl``` into your component for other requirements you may have
+```typescript
+import { BootstrapInputConfigInterface, BootstrapFormGroup } from 'ng-bootstrap-input';
+import { FormBuilder, FormGroup, Validators, FormControl, NgControl } from '@angular/forms';
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Configuration
+You will have to pass a congifuration object into the BootstrapInputComponent. The following keys are avialable for the configuration object. Some of these options will be defaulted based on the type of the input (Use demo locally to see all form types and their defaults in action).
+* ```type``` the type of input (email, phone, postal-code, currency)
+* ```form``` the BootstrapFormGroup object that represents your form
+* ```required``` whether or not the fied is required
+* ```validationRegex``` the regex that the input must conform to
+* ```maskArray``` an array that represents the mask of the input
+* ```maxLength``` maximum amount of characters aloud
 
-## Running unit tests
+## Usage Examples
+The following is an example of all of the available types being used. More types are to come!
+### app.component.ts
+```typescript
+...
+public form: BootstrapFormGroup = <BootstrapFormGroup>this.fb.group( {} );
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+public phoneConfig: BootstrapInputConfigInterface = {
+    type: 'phone',
+    form: this.form,
+    required: true,
+    validationRegex: null,
+    maskArray: null,
+    maxLength: null
+};
 
-## Running end-to-end tests
+public postalCodeConfig: BootstrapInputConfigInterface = {
+    type: 'postal-code',
+    form: this.form,
+    required: true,
+    validationRegex: null,
+    maskArray: null,
+    maxLength: null
+};
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+public emailConfig: BootstrapInputConfigInterface = {
+    type: 'email',
+    form: this.form,
+    required: true,
+    validationRegex: null,
+    maskArray: null,
+    maxLength: null
+};
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+public currencyConfig: BootstrapInputConfigInterface = {
+    type: 'currency',
+    form: this.form,
+    required: true,
+    validationRegex: null,
+    maskArray: null,
+    maxLength: null
+};
+...
+```
+### app.component.html
+```html
+...
+<label>Phone Number</label>
+<bootstrap-input [inputConfig]="phoneConfig"></bootstrap-input>
+<label>Postal Code</label>
+<bootstrap-input [inputConfig]="postalCodeConfig"></bootstrap-input>
+<label>Email</label>
+<bootstrap-input [inputConfig]="emailConfig"></bootstrap-input>
+<label>Currency</label>
+<bootstrap-input [inputConfig]="currencyConfig"></bootstrap-input>
+...
+```

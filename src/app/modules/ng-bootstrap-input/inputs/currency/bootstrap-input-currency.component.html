@@ -1,0 +1,5 @@
+<div class="form-group" [ngClass]="{'has-success':isValid('amount'), 'has-danger':hasError('amount')}">
+	<input type="text" class="form-control" [textMask]="{mask:maskConfig}" [ngClass]="{'form-control-success':isValid('amount'), 'form-control-danger':hasError('amount')}" id="amount"
+		[formControl]="getFormControl()">
+	<div class="form-control-feedback" *ngIf="hasError('amount', 'required')">Required</div>
+</div>

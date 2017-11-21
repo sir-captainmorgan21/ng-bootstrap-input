@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+.container-main {
+	height: 100%;
+	background-image: url('./assets/images/background.jpg');
+	background-size: cover;
+}
+
+body, html {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+button {
+	cursor: pointer;
+}
+
+.card {
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+}
+
+label {
+	margin-bottom: .1rem
+}
