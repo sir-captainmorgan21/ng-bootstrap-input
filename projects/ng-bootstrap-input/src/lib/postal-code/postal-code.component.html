@@ -1,5 +1,5 @@
-<div class="form-group" [ngClass]="{'has-success':isValid(), 'has-danger':control.invalid}">
-    <input type="text" [textMask]="maskConfig" class="form-control" [ngClass]="{'form-control-success':isValid(), 'form-control-danger':control.invalid}" id="{{controlName}}"
+<div class="form-group" [ngClass]="{'has-success':isValid(), 'has-danger':isInvalid()}">
+    <input type="text" [textMask]="maskConfig" class="form-control" [ngClass]="{'form-control-success':isValid(), 'form-control-danger':isInvalid()}" id="{{controlName}}"
       [formControl]="control">
     <div class="form-control-feedback" *ngIf="hasError('required')">Required</div>
   </div>

@@ -39,6 +39,10 @@ export class InputComponent implements OnInit {
     return (this.control.touched || this.form.submitted) && this.control.hasError(errorName);
   }
 
+  isInvalid() {
+    return (this.control.touched && this.form.submitted) && this.control.invalid;
+  }
+
   isValid(): boolean {
     return this.control.touched && this.control.valid;
   }
