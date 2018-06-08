@@ -1,5 +1,0 @@
-<div class="form-group" [ngClass]="{'has-success':isValid('postalCode'), 'has-danger':hasError('postalCode')}">
-	<input type="text" [textMask]="maskConfig" class="form-control" [ngClass]="{'form-control-success':isValid('postalCode'), 'form-control-danger':hasError('postalCode')}" id="postal-code"
-		[formControl]="getFormControl()">
-	<div class="form-control-feedback" *ngIf="hasError('postalCode', 'required')">Required</div>
-</div>

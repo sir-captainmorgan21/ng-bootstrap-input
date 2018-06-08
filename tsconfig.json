@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -15,9 +16,19 @@
       "es2017",
       "dom"
     ],
-    "plugins": [
-      { "name": "@angular/language-service"},
-      { "name": "tslint-language-service"}
-    ]
+    "paths": {
+      "lib-ng-bootstrap-input": [
+        "dist/lib-ng-bootstrap-input"
+      ],
+      "lib-ng-bootstrap-input/*": [
+        "dist/lib-ng-bootstrap-input/*"
+      ],
+      "ng-bootstrap-input": [
+        "dist/ng-bootstrap-input"
+      ],
+      "ng-bootstrap-input/*": [
+        "dist/ng-bootstrap-input/*"
+      ]
+    }
   }
 }
