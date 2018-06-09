@@ -2,7 +2,7 @@
   <div class="col-sm-3 offset-3">
     <bootstrap-phone [required]="true" [form]="form" [controlName]="'phone'" [label]="'Phone'"></bootstrap-phone>
     <bootstrap-email [form]="form" [controlName]="'email'" [label]="'Email'"></bootstrap-email>
-    <bootstrap-input [form]="form" [controlName]="'state'" [label]="'State'"></bootstrap-input>
+    <bootstrap-input [form]="form" [controlName]="'state'" [label]="'State'" [maskConfig]="stateMaskConfig"></bootstrap-input>
     <button (click)="alertFormValidation()" class="btn btn-primary">Get Form Validation</button>
   </div>
 </div>

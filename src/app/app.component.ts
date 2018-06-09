@@ -10,6 +10,14 @@ export class AppComponent {
   title = 'app';
   public form: BootstrapFormGroup = new BootstrapFormGroup({});
 
+  public stateMaskConfig = {
+    mask: [/[A-Za-z]/, /[A-Za-z]/],
+    pipe: function(conformedValue: string) {
+      return conformedValue.toUpperCase();
+    },
+    guide: false
+  };
+
   alertFormValidation() {
     this.form.submitted = true;
     alert(this.form.valid);

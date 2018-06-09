@@ -20,8 +20,8 @@ export class InputComponent implements OnInit {
   control: FormControl;
   validators: ValidatorFn[] = [];
   @Input() maskConfig: IMaskConfig = {
-    mask: null,
-    pipe: null,
+    mask: false,
+    pipe: false,
     guide: false
   };
 
@@ -40,7 +40,7 @@ export class InputComponent implements OnInit {
   }
 
   isInvalid() {
-    return (this.control.touched && this.form.submitted) && this.control.invalid;
+    return (this.control.touched || this.form.submitted) && this.control.invalid;
   }
 
   isValid(): boolean {
