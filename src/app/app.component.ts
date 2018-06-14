@@ -9,6 +9,7 @@ import { BootstrapFormGroup } from 'ng-bootstrap-input';
 export class AppComponent {
   title = 'app';
   public form: BootstrapFormGroup = new BootstrapFormGroup({});
+  public passwordRegex =  '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
 
   public stateMaskConfig = {
     mask: [/[A-Za-z]/, /[A-Za-z]/],

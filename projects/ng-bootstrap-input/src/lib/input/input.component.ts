@@ -13,6 +13,7 @@ export class InputComponent implements OnInit {
   @Input() maxLength: number;
   @Input() minLength: number;
   @Input() regex: RegExp;
+  @Input() regexErrorMsg: string = 'Invalid Format';
   @Input() required: boolean;
   @Input() label: string = '<No Label Provided>';
   @Input() controlName: string;

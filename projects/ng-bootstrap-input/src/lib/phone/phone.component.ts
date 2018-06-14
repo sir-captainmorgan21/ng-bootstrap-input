@@ -10,6 +10,6 @@ import { InputComponent } from '../input/input.component';
 export class PhoneComponent extends InputComponent {
 
   @Input() maskArray:
-    (string | RegExp)[] = ['+', '1', ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+    (string | RegExp)[] = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
 
 }

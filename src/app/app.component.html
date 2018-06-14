@@ -3,7 +3,7 @@
     <bootstrap-phone [required]="true" [form]="form" [controlName]="'phone'" [label]="'Phone'"></bootstrap-phone>
     <bootstrap-email [form]="form" [controlName]="'email'" [label]="'Email'"></bootstrap-email>
     <bootstrap-input [form]="form" [controlName]="'state'" [label]="'State'" [maskConfig]="stateMaskConfig"></bootstrap-input>
-    <bootstrap-password [form]="form" [required]="true" [controlName]="'password'" [label]="'Password'"></bootstrap-password>
+    <bootstrap-password [form]="form" [required]="true" [controlName]="'password'" [label]="'Password'" [regex]="passwordRegex" [regexErrorMsg]="'Test'"></bootstrap-password>
     <bootstrap-confirm-password [form]="form" [controlName]="'confirmPassword'" [label]="'Confirm Password'"></bootstrap-confirm-password>
     <button (click)="alertFormValidation()" class="btn btn-primary">Get Form Validation</button>
   </div>
