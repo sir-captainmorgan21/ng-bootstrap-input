@@ -1,6 +1,6 @@
 <div class="form-group" [ngClass]="{'has-success':isValid(), 'has-danger':isInvalid()}">
   <label>{{label}}</label>
-  <input type="text" [textMask]="maskConfig" class="form-control" [ngClass]="{'form-control-success':isValid(), 'form-control-danger':isInvalid()}" id="{{controlName}}"
+  <input [autocomplete]="autoComplete" type="text" [textMask]="maskConfig" class="form-control" [ngClass]="{'form-control-success':isValid(), 'form-control-danger':isInvalid()}" id="{{controlName}}"
     [formControl]="control">
   <small class="form-control-feedback" *ngIf="hasError('required')">Required</small>
   <small class="form-control-feedback" *ngIf="hasError('pattern')">{{regexErrorMsg}}</small>

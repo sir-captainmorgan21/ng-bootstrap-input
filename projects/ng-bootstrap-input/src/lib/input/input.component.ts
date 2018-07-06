@@ -18,6 +18,7 @@ export class InputComponent implements OnInit {
   @Input() label: string = '<No Label Provided>';
   @Input() controlName: string;
   @Input() form: BootstrapFormGroup;
+  @Input() autoComplete: string | boolean = false;
   control: FormControl;
   validators: ValidatorFn[] = [];
   @Input() maskConfig: IMaskConfig = {
